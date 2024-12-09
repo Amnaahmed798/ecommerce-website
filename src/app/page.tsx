@@ -27,7 +27,7 @@ const ImageWithText = () => {
     </div>
     <div className="w-1440 h-770 ">
       <div className="item-center content-center text-center mt-12 mb-12">
-      <h1 className="font-bold text-[40px]">EDITOR'S PICK</h1>
+      <h1 className="font-bold text-[40px]">EDITOR&apos;S PICK</h1>
       <p>Problems trying to resolve the conflict between</p>
       </div>
     <div className="flex p-12">

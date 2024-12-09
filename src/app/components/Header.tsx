@@ -1,5 +1,4 @@
 import React from "react";
-import { Input } from "@/components/ui/input";
 import { CiSearch } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
