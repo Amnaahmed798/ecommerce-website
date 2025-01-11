@@ -5,24 +5,32 @@ import { IoCartOutline } from "react-icons/io5";
 import { FiPhone } from "react-icons/fi";
 import { BsEnvelope } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
+import Link from "next/link";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"; // Assuming this is your UI library
 
 const Header = () => {
   return (
-    <div className="sticky top-0 z-10 bg-white">
+    <div className="top-0 z-10 bg-white">
+      {/* Contact Info Section */}
       <div className="mx-auto w-full p-5 flex flex-col md:flex-row items-center bg-black text-white gap-5 md:gap-10">
-
-        {/* Contact Info Section */}
         <div className="flex flex-col md:flex-row gap-4 text-xs md:text-sm items-center md:items-start">
-          <p className="flex items-center gap-2"><FiPhone className="mt-1" /> (225) 555-0118</p>
-          <p className="flex items-center gap-2"><BsEnvelope className="mt-1" /> michelle.rivera@example.com</p>
+          <p className="flex items-center gap-2">
+            <FiPhone className="mt-1" /> (225) 555-0118
+          </p>
+          <p className="flex items-center gap-2">
+            <BsEnvelope className="mt-1" /> michelle.rivera@example.com
+          </p>
         </div>
-
-        {/* Follow Us Section */}
         <div className="flex flex-col items-center text-center text-xs md:text-sm">
           <p className="font-medium">Follow Us and get a chance to win 80% off</p>
         </div>
-
-        {/* Social Media Icons Section */}
         <div className="flex gap-3 text-xs md:text-sm">
           <p className="flex font-medium">Follow Us:
             <span className="flex inline-flex gap-3">
@@ -86,43 +94,78 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Main Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-5 w-full px-5 md:px-10 py-5 text-xs md:text-sm">
-
         {/* Brand Name */}
         <div className="font-bold text-2xl md:text-3xl">Bandage</div>
 
         {/* Navigation Links */}
-        <div className="flex gap-5 text-xs md:text-sm ">
+        <div className="flex gap-5 text-xs md:text-sm hidden md:block">
           <ul className="flex space-x-6 items-center text-xs md:text-sm">
-            <li><a href="home">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li>
               <select name="Shop" id="Shop" className="bg-white text-black text-xs md:text-sm">
                 <option value="Shop">Shop</option>
               </select>
             </li>
-            <li><a href="About">About</a></li>
+            <li><a href="about">About</a></li>
             <li><a href="Blog">Blog</a></li>
-            <li><a href="Contact">Contact</a></li>
-            <li><a href="Pages">Pages</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="/productlist">Products</a></li>
           </ul>
         </div>
 
         {/* Login/Register and Icons */}
-        <div className="flex items-center gap-5 text-blue-400 text-xs md:text-sm">
+        <div className="flex items-center gap-5 text-blue-400 text-xs md:text-sm hidden md:block">
           <div className="flex items-center gap-3">
             <CgProfile className="w-5 h-5" />
-            <a href="Login"><b>Login / </b></a>
-            <a href="Register"><b>Register</b></a>
+            <a href="/login"><b>Login / </b></a>
+            <a href="/register"><b>Register</b></a>
           </div>
           <div className="flex items-center gap-3">
             <CiSearch className="w-7 h-7" />
             <CiHeart className="w-7 h-7" />
-            <IoCartOutline className="w-7 h-7" />
+            <Link href="/cart">
+              <IoCartOutline className="w-7 h-7" />
+            </Link>
           </div>
         </div>
-      </div>
 
-      <hr />
+        {/* Side Menu (Sheet Component) */}
+        <Sheet>
+          <SheetTrigger className="text-blue-500 cursor-pointer lg:hidden">&#9776; </SheetTrigger>
+          <SheetContent side="right" className="w-64 p-4 bg-white ">
+            <SheetHeader>
+              <SheetTitle>Menu</SheetTitle>
+              <SheetDescription>
+                Navigate through our pages
+              </SheetDescription>
+            </SheetHeader>
+            <div className="space-y-6 mt-6">
+              <ul className="text-sm">
+                <li><a href="/">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="Blog">Blog</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="/productlist">Products</a></li>
+              </ul>
+              <div className="mt-8">
+                <div className="flex flex-col gap-4">
+                  <a href="/login" className="text-blue-400">Login</a>
+                  <a href="/register" className="text-blue-400">Register</a>
+                  <div className="flex gap-4">
+                    <CiSearch className="w-6 h-6" />
+                    <CiHeart className="w-6 h-6" />
+                    <Link href="/cart">
+                      <IoCartOutline className="w-6 h-6" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
     </div>
   );
 };
