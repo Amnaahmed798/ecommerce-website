@@ -103,15 +103,11 @@ const Header = () => {
         <div className="flex gap-5 text-xs md:text-sm hidden md:block">
           <ul className="flex space-x-6 items-center text-xs md:text-sm">
             <li><a href="/">Home</a></li>
-            <li>
-              <select name="Shop" id="Shop" className="bg-white text-black text-xs md:text-sm">
-                <option value="Shop">Shop</option>
-              </select>
-            </li>
+            
             <li><a href="about">About</a></li>
-            <li><a href="Blog">Blog</a></li>
+            <li><a href="/blog">Blog</a></li>
             <li><a href="contact">Contact</a></li>
-            <li><a href="/productlist">Products</a></li>
+            <li><a href="/productslisting">Shop</a></li>
           </ul>
         </div>
 

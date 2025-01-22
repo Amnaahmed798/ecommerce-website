@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+
 // Define a type for the product
 interface Product {
   id: number;
@@ -110,3 +111,5 @@ const ProductList: React.FC = () => {
 };
 
 export default ProductList;
+
+
