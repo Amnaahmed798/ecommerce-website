@@ -3,31 +3,31 @@ import { ImQrcode } from "react-icons/im";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-600 body-font bottom-0">
+    <footer className="bg-black text-white body-font bottom-0">
       <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-wrap md:text-left text-center -mb-10 -mx-4 justify-evenly">
+        <div className="flex flex-wrap md:text-left text-left  -mb-10 -mx-4 justify-evenly">
           <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-bold text-[24px] text-black tracking-widest text-sm mb-3">
+            <h2 className="title-font font-bold text-[24px] text-white tracking-widest text-sm mb-3">
               Exclusive
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-black text-[20px] hover:text-gray-600">Subscribe</a>
+                <a className="text-white text-[20px] hover:text-gray-300">Subscribe</a>
               </li>
               <li>
-                <a className="text-black hover:text-gray-600">Get 10% off your first order</a>
+                <a className="text-white hover:text-gray-300">Get 10% off your first order</a>
               </li>
-              <div className="relative sm:w-64 w-40 sm:mr-4 mr-2">
+              <div className="relative sm:w-64 sm:content-center w-40 sm:mr-4 mr-2">
                 <label
                   htmlFor="footer-field"
-                  className="leading-7 text-sm text-gray-600"
+                  className="leading-7 text-sm text-white"
                 >
                 </label>
                 <input
                   type="text"
                   id="footer-field"
                   name="footer-field"
-                  className="w-44 bg-white bg-opacity-50 rounded border border-black focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-44 bg-black bg-opacity-50 rounded border border-white focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   placeholder='Enter Your Email'
                 />
               </div>
@@ -35,81 +35,81 @@ const Footer = () => {
           </div>
           
           <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font text-[19px] font-medium text-black tracking-widest text-sm mb-3">
+            <h2 className="title-font text-[19px] font-medium text-white tracking-widest text-sm mb-3">
               Support
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-black hover:text-gray-600">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</a>
+                <a className="text-white hover:text-gray-300">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</a>
               </li>
               <li>
-                <a className="text-black hover:text-gray-600">exclusive@gmail.com</a>
+                <a className="text-white hover:text-gray-300">exclusive@gmail.com</a>
               </li>
               <li>
-                <a className="text-black hover:text-gray-600">+88015-88888-9999</a>
+                <a className="text-white hover:text-gray-300">+88015-88888-9999</a>
               </li>
             </nav>
           </div>
           
           <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font text-[19px] font-medium text-black tracking-widest text-sm mb-3">
+            <h2 className="title-font text-[19px] font-medium text-white tracking-widest text-sm mb-3">
               Account
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-black hover:text-gray-600">My Account</a>
+                <a className="text-white hover:text-gray-300">My Account</a>
               </li>
               <li>
-                <a className="text-black hover:text-gray-600">Login/ Register</a>
+                <a className="text-white hover:text-gray-300">Login/ Register</a>
               </li>
               <li>
-                <a className="text-black hover:text-gray-600">Cart</a>
+                <a className="text-white hover:text-gray-300">Cart</a>
               </li>
               <li>
-                <a className="text-black hover:text-gray-600">Wishlist</a>
+                <a className="text-white hover:text-gray-300">Wishlist</a>
               </li>
               <li>
-                <a className="text-black hover:text-gray-600">Shop</a>
+                <a className="text-white hover:text-gray-300">Shop</a>
               </li>
             </nav>
           </div>
           
           <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font text-[19px] font-medium text-black tracking-widest text-sm mb-3">
+            <h2 className="title-font text-[19px] font-medium text-white tracking-widest text-sm mb-3">
               Quick Link
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-black hover:text-gray-600">Privacy Policy</a>
+                <a className="text-white hover:text-gray-300">Privacy Policy</a>
               </li>
               <li>
-                <a className="text-black hover:text-gray-600">Term of Use</a>
+                <a className="text-white hover:text-gray-300">Term of Use</a>
               </li>
               <li>
-                <a className="text-black hover:text-gray-600">FAQ</a>
+                <a className="text-white hover:text-gray-300">FAQ</a>
               </li>
               <li>
-                <a className="text-black hover:text-gray-600">Contact</a>
+                <a className="text-white hover:text-gray-300">Contact</a>
               </li>
             </nav>
           </div>
           
           <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-            <h2 className="title-font text-[19px] font-medium text-black tracking-widest text-sm mb-3">
+            <h2 className="title-font text-[19px] font-medium text-white tracking-widest text-sm mb-3">
               Download App
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-600">Save $3 with App New User Only</a>
+                <a className="text-gray-300">Save $3 with App New User Only</a>
               </li>
               <li>
                 <ImQrcode
-                  className='bg-black text-white w-20 h-20 border border-black px-1 '
+                  className='bg-white text-black w-20 h-20 border border-white px-1 '
                 />
                 <br />
               </li>
               <span className="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
-                <a className="text-black">
+                <a className="text-white">
                   <svg
                     fill="currentColor"
                     strokeLinecap="round"
@@ -121,7 +121,7 @@ const Footer = () => {
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                   </svg>
                 </a>
-                <a className="ml-3 text-black">
+                <a className="ml-3 text-white">
                   <svg
                     fill="currentColor"
                     strokeLinecap="round"
@@ -133,7 +133,7 @@ const Footer = () => {
                     <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
                   </svg>
                 </a>
-                <a className="ml-3 text-black">
+                <a className="ml-3 text-white">
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -147,7 +147,7 @@ const Footer = () => {
                     <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
                   </svg>
                 </a>
-                <a className="ml-3 text-black">
+                <a className="ml-3 text-white">
                   <svg
                     fill="currentColor"
                     stroke="currentColor"
@@ -169,10 +169,10 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-200">
+        <div className="border-t border-white">
           <div className="container px-5 py-8 flex flex-wrap mx-auto items-center">
             <div className="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
-              <p className="text-gray-600 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">
+              <p className="text-white text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">
                 Copyright Rimel 2023. All rights reserved
               </p>
             </div>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const ImageWithText = () => {
   return (
-    <div>
+    <div className="">
       {/* Main Image Section */}
       <div className="relative w-full h-[60vh] sm:h-[700px]">
         <Image
@@ -15,16 +15,17 @@ const ImageWithText = () => {
         />
 
         {/* Text overlay */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xl font-bold text-center md:left-[30%] sm:left-[50%]">
-          <p className="mb-12">SUMMER 2020</p>
-          <h1 className="text-[50px] font-bold mb-12 md:text-[30px] sm:text-[30px]">NEW COLLECTION</h1>
-          <p className="mb-8 text-sm md:text-base">We know how large objects will act,<br/> but things on a small scale.</p>
-          <Button variant="outline" className="bg-green-500 font-bold border-none rounded-none">SHOP NOW</Button>
-        </div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xl font-bold text-left md:left-[30%] sm:left-[50%] animate-slideInFromRight">
+    <p className="mb-12">SUMMER 2020</p>
+    <h1 className="text-[30px] font-bold mb-12 sm:text-[25px] md:text-[35px] lg:text-[40px]">NEW COLLECTION</h1>
+    <p className="mb-8 text-sm md:text-base">We know how large objects will act,<br /> but things on a small scale.</p>
+    <Button variant="outline" className="bg-green-500 font-bold border-none rounded-none">SHOP NOW</Button>
+</div>
+
       </div>
 
       {/* Editor's Pick Section */}
-      <div className="w-full py-12">
+      <div className="w-full py-12 px-4">
         <div className="text-center mb-12">
           <h1 className="font-bold text-[40px]">EDITOR&apos;S PICK</h1>
           <p className="text-sm md:text-base">Problems trying to resolve the conflict between</p>
@@ -32,20 +33,20 @@ const ImageWithText = () => {
 
         <div className="flex flex-wrap justify-center gap-6">
           {/* Image 1 */}
-          <div className="relative w-full sm:w-[300px] md:w-[510px]">
+          <div className="relative w-full sm:w-[300px] md:w-[510px] transform transition-transform duration-200 hover:scale-95">
             <Image src="/images/img1.jpg" alt="Image 1" className="w-full h-[500px] object-cover shadow-lg" width={400} height={400} />
             <Button variant="outline" className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white text-black font-bold border-none rounded-none mb-4 px-8 hover:bg-gray-200 hover:text-gray-700">MEN</Button>
           </div>
 
           {/* Image 2 */}
-          <div className="relative w-full sm:w-[240px] md:w-[240px]">
+          <div className="relative w-full sm:w-[240px] md:w-[240px] transform transition-transform duration-200 hover:scale-95">
             <Image src="/images/img2.jpg" alt="Image 2" className="w-full h-[500px] object-cover shadow-lg" width={400} height={400} />
             <Button variant="outline" className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white text-black font-bold border-none rounded-none px-8 py-2 mb-4 hover:bg-gray-200 hover:text-gray-700">WOMEN</Button>
           </div>
 
           <div className="flex flex-row lg:flex-col gap-6 justify-center ">
   {/* Image 3 */}
-  <div className="relative w-full sm:w-[240px] md:w-[240px] lg:w-[240px]">
+  <div className="relative w-full sm:w-[240px] md:w-[240px] lg:w-[240px] transform transition-transform duration-200 hover:scale-95">
     <Image
       src="/images/img3.jpg"
       alt="Image 3"
@@ -62,7 +63,7 @@ const ImageWithText = () => {
   </div>
 
   {/* Image 4 */}
-  <div className="relative w-full sm:w-[240px] md:w-[240px] lg:w-[240px]">
+  <div className="relative w-full sm:w-[240px] md:w-[240px] lg:w-[240px transform transition-transform duration-200 hover:scale-95">
     <Image
       src="/images/img4.jpg"
       alt="Image 4"
@@ -83,7 +84,7 @@ const ImageWithText = () => {
       </div>
 
       {/* Featured Products Section */}
-      <div className="min-h-screen flex flex-col items-center justify-center space-y-8 mt-24 mb-12">
+      <div className="min-h-screen flex flex-col items-center justify-center space-y-8 mt-24 mb-12 ">
         <div className="gap-[20px] text-center">
           <p>Featured Products</p>
           <h1 className="font-bold text-[32px]">BESTSELLER PRODUCTS</h1>
@@ -93,7 +94,7 @@ const ImageWithText = () => {
         <div className="flex flex-wrap justify-center gap-8">
           {/* Product 1 */}
           <div className="w-[239px] h-[427px] relative">
-            <Image src="/images/e1.jpg" alt="Image 1" objectFit="cover" className="rounded-lg shadow-lg" width={239} height={427} />
+            <Image src="/images/e1.jpg" alt="Image 1" objectFit="cover" className="rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-95" width={239} height={427} />
             <div className="text-center mt-4">
               <p className="text-lg font-semibold">Graphic Design</p>
               <p className="text-sm text-gray-500">English Department</p>
@@ -103,7 +104,7 @@ const ImageWithText = () => {
 
           {/* Product 2 */}
           <div className="w-[239px] h-[427px] relative">
-            <Image src="/images/e2.jpg" alt="Image 2" objectFit="cover" className="rounded-lg shadow-lg" width={239} height={427} />
+            <Image src="/images/e2.jpg" alt="Image 2" objectFit="cover" className="rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-95" width={239} height={427} />
             <div className="text-center mt-4">
               <p className="text-lg font-semibold">Graphic Design</p>
               <p className="text-sm text-gray-500">English Department</p>
@@ -112,8 +113,8 @@ const ImageWithText = () => {
           </div>
 
           {/* Product 3 */}
-          <div className="w-[239px] h-[427px] relative">
-            <Image src="/images/e3.jpg" alt="Image 3" objectFit="cover" className="rounded-lg shadow-lg" width={239} height={427} />
+          <div className="w-[239px] h-[427px] relative ">
+            <Image src="/images/e3.jpg" alt="Image 3" objectFit="cover" className="rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-95" width={239} height={427} />
             <div className="text-center mt-4">
               <p className="text-lg font-semibold">Graphic Design</p>
               <p className="text-sm text-gray-500">English Department</p>
@@ -123,7 +124,7 @@ const ImageWithText = () => {
 
           {/* Product 4 */}
           <div className="w-[239px] h-[427px] relative">
-            <Image src="/images/e4.jpg" alt="Image 4" objectFit="cover" className="rounded-lg shadow-lg" width={239} height={427} />
+            <Image src="/images/e4.jpg" alt="Image 4" objectFit="cover" className="rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-95" width={239} height={427} />
             <div className="text-center mt-4">
               <p className="text-lg font-semibold">Graphic Design</p>
               <p className="text-sm text-gray-500">English Department</p>
@@ -135,24 +136,25 @@ const ImageWithText = () => {
 
       {/* Additional Section */}
       <div className="relative w-full h-[60vh] sm:h-[700px] bg-green-300">
-        <Image
-          src="/images/main.2.png"
-          alt="Description of the image"
-          objectFit="cover"
-          className="rounded-lg absolute top-0 right-0"
-          width={443}
-          height={685}
-        />
-        <div className="absolute top-1/2 left-[40%] transform -translate-x-1/2 -translate-y-1/2 text-white text-xl font-bold ">
-          <p className="mb-12">SUMMER 2020</p>
-          <h1 className="text-[50px] mb-12">Vita Classic  Product</h1>
-          <p className="mb-8">We know how large objects will act, We know how our object will act.</p>
-          <div className="flex gap-6 ">
-            <p>$16.48</p>
-            <Button variant="outline" className="bg-green-500 font-bold border-none rounded-none">ADD TO CART</Button>
-          </div>
-        </div>
-      </div>
+  <Image
+    src="/images/main.2.png"
+    alt="Description of the image"
+    objectFit="cover"
+    className="rounded-lg absolute top-0 right-0 w-[443px] h-[685px] object-cover"
+    width={443}
+    height={685}
+  />
+  <div className="absolute top-1/2 left-[30%] transform -translate-x-1/2 -translate-y-1/2 text-white text-xl font-bold px-5 sm:px-10">
+    <p className="mb-4 sm:mb-8 text-base sm:text-lg">SUMMER 2020</p>
+    <h1 className="text-[30px] sm:text-[50px] font-bold mb-8">Vita Classic Product</h1>
+    <p className="mb-8 text-sm sm:text-base">We know how large objects will act, We know how our object will act.</p>
+    <div className="flex gap-6 flex-wrap justify-center sm:justify-start">
+      <p className="text-lg sm:text-xl">$16.48</p>
+      <Button variant="outline" className="bg-green-500 text-white font-bold border-none rounded-none py-2 px-4 text-sm sm:text-base">ADD TO CART</Button>
+    </div>
+  </div>
+</div>
+
 
       <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
         <div>
@@ -166,7 +168,7 @@ const ImageWithText = () => {
             layout="intrinsic"
           />
         </div>
-        <div className="mt-32 text-center">
+        <div className="mt-4 text-center px-12">
           <p className="mb-12">SUMMER 2020</p>
           <h1 className="text-[50px] mb-12">Part of the Neural<br /> Universe</h1>
           <p className="mb-8">We know how large objects will act, We know how our object will act.</p>
@@ -178,12 +180,12 @@ const ImageWithText = () => {
       </div>
 
       {/* Featured Posts Section */}
-      <div className="text-center mt-24">
+      <div className="text-center mt-24 ">
         <p className="font-bold text-blue-500">Practice Advice</p>
         <h1 className="font-bold text-[32px]">Featured Posts</h1>
         <p>Problem trying to resolve the conflict between <br/>the two major realms of classical physics: Newtonian Mechanics</p>
       </div>
-      <div className="flex flex-wrap justify-center gap-6 mt-12">
+      <div className="flex flex-wrap justify-center gap-6 mt-12 px-4">
         {/* Post 1 */}
         <div className="w-[348px]">
           <Image

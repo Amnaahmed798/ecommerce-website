@@ -67,9 +67,11 @@ const ProductCards: React.FC = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-center text-slate-800 mt-4 mb-4">
-        Products From API Data
-      </h2>
+     <div className="gap-[20px] text-center">
+          <p>Featured Products</p>
+          <h1 className="font-bold text-[32px]">BESTSELLER PRODUCTS</h1>
+          <p>Problem trying to solve the conflict between</p>
+        </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <div key={product._id} className="bg-white rounded-lg shadow-md p-4">

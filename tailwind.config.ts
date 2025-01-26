@@ -25,6 +25,24 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)', // Custom medium radius
         sm: 'calc(var(--radius) - 4px)', // Custom small radius
       },
+
+      // Adding custom animation and keyframes
+      keyframes: {
+          slideInFromRight: {
+            '0%': {
+              transform: 'translateX(100%)', // Start from the right
+              opacity: '0', // Start off invisible
+            },
+            '100%': {
+              transform: 'translateX(0)', // End at its normal position
+              opacity: '1', // Be fully visible
+            },
+          },
+      },
+      
+      animation: {
+        slideInFromRight: 'slideInFromRight 1s ease-out',
+      },
     },
   },
   

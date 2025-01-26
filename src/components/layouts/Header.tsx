@@ -1,3 +1,6 @@
+"use client";
+
+
 import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
@@ -5,6 +8,14 @@ import { IoCartOutline } from "react-icons/io5";
 import { FiPhone } from "react-icons/fi";
 import { BsEnvelope } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
 import Link from "next/link";
 import {
   Sheet,
@@ -19,8 +30,8 @@ const Header = () => {
   return (
     <div className="top-0 z-10 bg-white">
       {/* Contact Info Section */}
-      <div className="mx-auto w-full p-5 flex flex-col md:flex-row items-center bg-black text-white gap-5 md:gap-10">
-        <div className="flex flex-col md:flex-row gap-4 text-xs md:text-sm items-center md:items-start">
+      <div className="mx-auto w-full p-5 flex flex-col gap-1 md:flex-row items-center bg-black text-white  md:gap-10">
+        <div className="flex flex-col md:flex-row  text-xs md:text-sm items-center md:items-start">
           <p className="flex items-center gap-2">
             <FiPhone className="mt-1" /> (225) 555-0118
           </p>
@@ -95,7 +106,7 @@ const Header = () => {
       </div>
 
       {/* Main Header Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-5 w-full px-5 md:px-10 py-5 text-xs md:text-sm">
+      <div className="flex  md:flex-row border border-black justify-between items-center gap-5 w-full h-[80px] px-5 md:px-10 py-5 text-xs md:text-sm">
         {/* Brand Name */}
         <div className="font-bold text-2xl md:text-3xl">Bandage</div>
 
@@ -103,8 +114,19 @@ const Header = () => {
         <div className="flex gap-5 text-xs md:text-sm hidden md:block">
           <ul className="flex space-x-6 items-center text-xs md:text-sm">
             <li><a href="/">Home</a></li>
-            
-            <li><a href="about">About</a></li>
+ <Select>
+  <SelectTrigger className="w-[130px]">
+ <SelectValue placeholder="Categories" />
+  </SelectTrigger>
+  <SelectContent className="bg-white">
+  <SelectItem value="men" onClick={() => window.location.href = "/men"}>Men&apos;s</SelectItem>
+    <SelectItem value="women" onClick={() => window.location.href = "/men"}>Women&apos;s</SelectItem>
+    <SelectItem value="kids" onClick={() => window.location.href = "/men"}>Kids</SelectItem>
+    <SelectItem value="assesories" onClick={() => window.location.href = "/men"}>Assesories</SelectItem>
+  </SelectContent>
+</Select>
+           
+             <li><a href="about">About</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="contact">Contact</a></li>
             <li><a href="/productslisting">Shop</a></li>
@@ -115,7 +137,7 @@ const Header = () => {
         <div className="flex items-center gap-5 text-blue-400 text-xs md:text-sm hidden md:block">
           <div className="flex items-center gap-3">
             <CgProfile className="w-5 h-5" />
-            <a href="/login"><b>Login / </b></a>
+            <a href="/login"><b>Login</b></a>
             <a href="/register"><b>Register</b></a>
           </div>
           <div className="flex items-center gap-3">
@@ -129,7 +151,7 @@ const Header = () => {
 
         {/* Side Menu (Sheet Component) */}
         <Sheet>
-          <SheetTrigger className="text-blue-500 cursor-pointer lg:hidden">&#9776; </SheetTrigger>
+          <SheetTrigger className="text-black text-[25px] cursor-pointer lg:hidden">&#9776; </SheetTrigger>
           <SheetContent side="right" className="w-64 p-4 bg-white ">
             <SheetHeader>
               <SheetTitle>Menu</SheetTitle>
@@ -137,13 +159,24 @@ const Header = () => {
                 Navigate through our pages
               </SheetDescription>
             </SheetHeader>
-            <div className="space-y-6 mt-6">
-              <ul className="text-sm">
+            <div className=" mt-6">
+              <ul className="text-sm space-y-4 ">
                 <li><a href="/">Home</a></li>
+                <Select>
+                <SelectTrigger className="w-[130px]">
+               <SelectValue placeholder="Categories" />
+                </SelectTrigger>
+                <SelectContent className="bg-white">
+                <SelectItem value="men" onClick={() => window.location.href = "/men"}>Men&apos;s</SelectItem>
+                  <SelectItem value="women" onClick={() => window.location.href = "/men"}>Women&apos;s</SelectItem>
+                  <SelectItem value="kids" onClick={() => window.location.href = "/men"}>Kids</SelectItem>
+                  <SelectItem value="assesories" onClick={() => window.location.href = "/men"}>Assesories</SelectItem>
+                </SelectContent>
+              </Select>
                 <li><a href="about">About</a></li>
-                <li><a href="Blog">Blog</a></li>
+                <li><a href="blog">Blog</a></li>
                 <li><a href="contact">Contact</a></li>
-                <li><a href="/productlist">Products</a></li>
+                <li><a href="/productslisting">Shop</a></li>
               </ul>
               <div className="mt-8">
                 <div className="flex flex-col gap-4">

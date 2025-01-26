@@ -23,6 +23,8 @@ interface Product {
   colors?: string[];
   sizes?: string[];
   tags?: string[];
+  category?: string;
+  reviews?: { rating: number; comment: string; author: string }[];
 }
 
 const ProductDetail: React.FC = () => {
@@ -30,6 +32,9 @@ const ProductDetail: React.FC = () => {
   const productId = pathname.split("/")[2]; // Extract the product ID from the URL
 
   const [product, setProduct] = useState<Product | null>(null);
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [newReview, setNewReview] = useState({ rating: 0, comment: "", author: "" });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -46,7 +51,9 @@ const ProductDetail: React.FC = () => {
           "imgUrl": image.asset->url,
           colors,
           sizes,
-          tags
+          tags,
+          category,
+          reviews
         }`;
 
         const data = await sanity.fetch(query, { id: productId });
@@ -60,6 +67,37 @@ const ProductDetail: React.FC = () => {
 
     fetchProduct();
   }, [productId]); // Re-fetch when the productId changes
+
+  const handleReviewSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!newReview.comment || newReview.rating === 0 || !newReview.author) {
+      return alert("Please fill in all fields for the review.");
+    }
+
+    const review = {
+      rating: newReview.rating,
+      comment: newReview.comment,
+      author: newReview.author,
+    };
+
+    try {
+      const res = await fetch("/api/submitReview", {
+        method: "POST",
+        body: JSON.stringify({ productId, review }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (res.ok) {
+        alert("Thank you for your review!");
+        setNewReview({ rating: 0, comment: "", author: "" }); // Reset review form
+      } else {
+        alert("Error submitting review. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error submitting review:", error);
+    }
+  };
 
   if (loading) {
     return <div>Loading...</div>; // Show loading message
@@ -89,6 +127,98 @@ const ProductDetail: React.FC = () => {
             <p className="text-red-500 text-sm mt-2">
               {product.discountPercent}% Off
             </p>
+          )}
+
+          {/* Category */}
+          {product.category && (
+            <p className="text-md text-gray-700 mt-4">Category: {product.category}</p>
+          )}
+
+          {/* Color Selection */}
+          {product.colors && (
+            <div className="mt-4">
+              <h3 className="font-semibold">Select Color:</h3>
+              <div className="flex space-x-4">
+                {product.colors.map((color, index) => (
+                  <button
+                    key={index}
+                    className={`w-8 h-8 rounded-full ${selectedColor === color ? "border-2 border-black" : ""}`}
+                    style={{ backgroundColor: color }}
+                    onClick={() => setSelectedColor(color)}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Size Selection */}
+          {product.sizes && (
+            <div className="mt-4">
+              <h3 className="font-semibold">Select Size:</h3>
+              <select
+                className="border p-2 rounded-md"
+                value={selectedSize || ""}
+                onChange={(e) => setSelectedSize(e.target.value)}
+              >
+                <option value="">Select Size</option>
+                {product.sizes.map((size, index) => (
+                  <option key={index} value={size}>
+                    {size}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {/* Review Form */}
+          <div className="mt-6">
+            <h3 className="font-semibold">Leave a Review</h3>
+            <form onSubmit={handleReviewSubmit} className="space-y-4">
+              <div>
+                <label>Rating (1-5)</label>
+                <input
+                  type="number"
+                  min="1"
+                  max="5"
+                  value={newReview.rating}
+                  onChange={(e) => setNewReview({ ...newReview, rating: +e.target.value })}
+                  required
+                />
+              </div>
+              <div>
+                <label>Comment</label>
+                <textarea
+                  value={newReview.comment}
+                  onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+                  required
+                />
+              </div>
+              <div>
+                <label>Your Name</label>
+                <input
+                  type="text"
+                  value={newReview.author}
+                  onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
+                  required
+                />
+              </div>
+              <button type="submit" className="bg-blue-500 text-white p-2 rounded-md">
+                Submit Review
+              </button>
+            </form>
+          </div>
+
+          {/* Display Reviews */}
+          {product.reviews && product.reviews.length > 0 && (
+            <div className="mt-6">
+              <h3 className="font-semibold">Reviews</h3>
+              {product.reviews.map((review, index) => (
+                <div key={index} className="mt-4 border-t pt-4">
+                  <p className="font-semibold">{review.author} - Rating: {review.rating}</p>
+                  <p>{review.comment}</p>
+                </div>
+              ))}
+            </div>
           )}
         </div>
       </div>
