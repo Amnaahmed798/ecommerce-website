@@ -140,9 +140,9 @@ const ImageWithText = () => {
     src="/images/main.2.png"
     alt="Description of the image"
     objectFit="cover"
-    className="rounded-lg absolute top-0 right-0 w-[443px] h-[685px] object-cover"
-    width={443}
-    height={685}
+    className="rounded-lg absolute top-0 right-0 object-cover w-[200px] sm:w-[300px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[700px]"
+    width={500}
+    height={500}
   />
   <div className="absolute top-1/2 left-[30%] transform -translate-x-1/2 -translate-y-1/2 text-white text-xl font-bold px-5 sm:px-10">
     <p className="mb-4 sm:mb-8 text-base sm:text-lg">SUMMER 2020</p>
